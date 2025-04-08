@@ -1,0 +1,43 @@
+import java.util.Scanner;
+
+public class ElementInfo {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        // Data for elements 1 to 20
+        String[] elementNames = {
+            "Hydrogen", "Helium", "Lithium", "Beryllium", "Boron",
+            "Carbon", "Nitrogen", "Oxygen", "Fluorine", "Neon",
+            "Sodium", "Magnesium", "Aluminium", "Silicon", "Phosphorus",
+            "Sulfur", "Chlorine", "Argon", "Potassium", "Calcium"
+        };
+
+        double[] atomicMasses = {
+            1.008, 4.0026, 6.94, 9.0122, 10.81,
+            12.01, 14.01, 16.00, 19.00, 20.18,
+            22.99, 24.31, 26.98, 28.09, 30.97,
+            32.06, 35.45, 39.95, 39.10, 40.08
+        };
+
+        String[] electronicConfigurations = {
+            "1s1", "1s2", "1s2 2s1", "1s2 2s2", "1s2 2s2 2p1",
+            "1s2 2s2 2p2", "1s2 2s2 2p3", "1s2 2s2 2p4", "1s2 2s2 2p5", "1s2 2s2 2p6",
+            "1s2 2s2 2p6 3s1", "1s2 2s2 2p6 3s2", "1s2 2s2 2p6 3s2 3p1", "1s2 2s2 2p6 3s2 3p2", "1s2 2s2 2p6 3s2 3p3",
+            "1s2 2s2 2p6 3s2 3p4", "1s2 2s2 2p6 3s2 3p5", "1s2 2s2 2p6 3s2 3p6", "1s2 2s2 2p6 3s2 3p6 4s1", "1s2 2s2 2p6 3s2 3p6 4s2"
+        };
+
+        System.out.print("Enter atomic number (1 to 20): ");
+        int atomicNumber = scanner.nextInt();
+
+        if (atomicNumber >= 1 && atomicNumber <= 20) {
+            int index = atomicNumber - 1;
+            System.out.println("Element: " + elementNames[index]);
+            System.out.println("Atomic Mass: " + atomicMasses[index]);
+            System.out.println("Electronic Configuration: " + electronicConfigurations[index]);
+        } else {
+            System.out.println("Invalid atomic number. Please enter a number between 1 and 20.");
+        }
+
+        scanner.close();
+    }
+}
